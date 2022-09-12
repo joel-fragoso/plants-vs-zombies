@@ -1,0 +1,30 @@
+:root {
+  --background-default: #000000;
+  --surface-default: #ffffff;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-default);
+}
+
+#canvas {
+  width: 900px;
+  height: 600px;
+  background-color: var(--surface-default);
+}
