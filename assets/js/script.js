@@ -13,7 +13,7 @@ let enemiesInterval = 600
 let frame = 0
 let gameOver = false
 let score = 0
-const winningScore = 50
+const winningScore = 1000
 const resources = []
 const projectiles = []
 const mouse = {
@@ -82,7 +82,7 @@ class Projectile {
   }
 
   draw() {
-    context.fillStyle = 'black'
+    context.fillStyle = 'green'
     context.beginPath()
     context.arc(this.x, this.y, this.width, 0, Math.PI * 2)
     context.fill()
@@ -130,7 +130,7 @@ class Defender {
   }
 
   draw() {
-    context.fillStyle = 'blue'
+    context.fillStyle = 'green'
     context.fillRect(this.x, this.y, this.width, this.height)
     context.fillStyle = 'gold'
     context.font = '30px Arial'
@@ -182,7 +182,7 @@ class Enemy {
     this.height = cellSize - cellGap * 2
     this.speed = Math.random() * 0.2 + 0.4
     this.movement = this.speed
-    this.health = 100
+    this.health = Math.floor(Math.random() * 2 + 1) * 100
     this.maxHealth = this.health
   }
 
